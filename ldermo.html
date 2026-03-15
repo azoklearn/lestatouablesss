@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDermo - Les Tatouables</title>
+    <meta name="description" content="LDermo - Spécialiste en tatouage réparateur et dermopigmentation. Reconstruction aréolaire, cicatrices, vergetures.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Amélioration de la lisibilité des titres et libellés du portfolio */
+        #portfolio .section-subtitle {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #f5f5f5;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.65);
+        }
+        #portfolio .portfolio-overlay p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-link {
+            font-size: 0.98rem;
+            font-weight: 700;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+        }
+        
+        /* Styles pour les menus de contact */
+        .contact-menu-item {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        .contact-menu-item:hover {
+            background-color: #f5f5f5;
+            color: #2c3e50;
+        }
+        .contact-menu-item:last-child {
+            border-bottom: none;
+        }
+        .contact-menu-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        
+        
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            /* Corriger le problème de la navbar qui coupe le contenu */
+            body {
+                padding-top: 100px !important;
+            }
+            
+            /* S'assurer que le contenu principal n'est pas coupé */
+            main, .hero, .about, .portfolio, .contact {
+                margin-top: 0 !important;
+            }
+            
+            .hero {
+                padding-top: 2rem !important;
+            }
+            
+            .about {
+                padding-top: 2rem !important;
+            }
+            
+            .portfolio {
+                padding-top: 2rem !important;
+            }
+            
+            .contact {
+                padding-top: 2rem !important;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-dropdown {
+                margin-bottom: 10px;
+                margin-right: 0 !important;
+            }
+            
+            .contact-menu {
+                position: relative !important;
+                display: none;
+                margin-top: 10px;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+            
+            .contact-menu-item {
+                background: #2c3e50;
+                color: white;
+                margin: 5px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            /* Images des créations plus petites sur mobile */
+            .portfolio .portfolio-image img {
+                max-width: 120px !important;
+                height: auto !important;
+                border: none !important;
+                outline: none !important;
+                border-radius: 0 !important;
+            }
+            
+            .portfolio .portfolio-item {
+                margin-bottom: 2px !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                border-radius: 0 !important;
+            }
+            
+            /* Forcer l'espacement réduit sur tous les éléments portfolio */
+            .portfolio .portfolio-grid {
+                gap: 8px !important;
+                row-gap: 8px !important;
+            }
+            
+            .portfolio .portfolio-item * {
+                margin-bottom: 0 !important;
+            }
+            
+            .portfolio .portfolio-image {
+                border: none !important;
+                border-radius: 0 !important;
+                overflow: visible !important;
+            }
+            
+            /* Forcer la suppression des bordures sur tous les éléments portfolio */
+            .portfolio * {
+                border: none !important;
+                box-shadow: none !important;
+            }
+            
+            /* Supprimer complètement les conteneurs gris */
+            .portfolio .portfolio-item,
+            .portfolio .portfolio-image,
+            .portfolio .portfolio-overlay {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            /* Forcer les images à être directement visibles */
+            .portfolio .portfolio-image {
+                display: block !important;
+                background: transparent !important;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px !important;
+                row-gap: 8px !important;
+                display: grid !important;
+                justify-content: center !important;
+                justify-items: center !important;
+            }
+            
+            /* Centrer les créations de LDermo sur mobile */
+            .portfolio {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-direction: column !important;
+            }
+            
+            .portfolio .container {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            .portfolio-section {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+            
+            /* Styles pour les sous-menus sur mobile */
+            .nav-submenu {
+                position: static !important;
+                display: none !important;
+                background: #1a1a1a !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin-top: 5px !important;
+                min-width: auto !important;
+                width: 100% !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                left: auto !important;
+                top: auto !important;
+                z-index: 999 !important;
+            }
+            
+            .nav-menu li:hover .nav-submenu,
+            .nav-menu li.active .nav-submenu,
+            .nav-menu li.is-open .nav-submenu {
+                display: block !important;
+            }
+            
+            .nav-submenu .nav-link {
+                display: block !important;
+                padding: 10px 15px !important;
+                font-size: 13px !important;
+                border-bottom: 1px solid #333333 !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                background: transparent !important;
+            }
+            
+            .nav-submenu .nav-link:last-child {
+                border-bottom: none !important;
+            }
+            
+            .nav-submenu li {
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .contact-menu-item {
+                background: #1a1a1a;
+                color: white;
+                margin: 5px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            /* S'assurer que le menu hamburger permet l'affichage des sous-menus */
+            .nav-menu {
+                overflow: visible !important;
+            }
+        }
+        
+        /* Styles pour les titres de la section hero */
+        .hero h1 {
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            font-weight: 700;
+        }
+        .hero p {
+            color: #ffffff !important;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            font-weight: 500;
+        }
+        
+        /* Forcer l'espacement réduit globalement */
+        .portfolio .portfolio-item {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-image {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-overlay {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-overlay h3,
+        .portfolio .portfolio-overlay p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Styles globaux pour forcer l'espacement réduit */
+        .portfolio * {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-grid {
+            gap: 8px !important;
+            row-gap: 8px !important;
+        }
+        
+        .portfolio .portfolio-item {
+            margin-bottom: 8px !important;
+        }
+        
+        /* Supprimer complètement les overlays */
+        .portfolio .portfolio-overlay {
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Forcer les images à prendre tout l'espace */
+        .portfolio .portfolio-image {
+            height: auto !important;
+            min-height: 0 !important;
+        }
+        
+        .portfolio .portfolio-image img {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        /* Personnalisation de la barre de défilement */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2c3e50;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #34495e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2c3e50;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+        }
+        
+        .lightbox-content {
+            position: absolute;
+            top: 0 !important;
+            left: 0 !important;
+            transform: none !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox img {
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            border-radius: 0;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .lightbox-close:hover {
+            color: #ccc;
+        }
+        
+        /* Forcer la priorité absolue de la croix de fermeture */
+        #lightbox-close {
+            z-index: 99999 !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+            position: absolute !important;
+            top: 20px !important;
+            right: 30px !important;
+            color: white !important;
+            font-size: 40px !important;
+            font-weight: bold !important;
+            background: rgba(0,0,0,0.5) !important;
+            border-radius: 50% !important;
+            width: 50px !important;
+            height: 50px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        #lightbox-close:hover {
+            color: #ff4757 !important;
+            background: rgba(0,0,0,0.8) !important;
+            transform: scale(1.1) !important;
+        }
+        
+        /* Styles pour les boutons de navigation */
+        .lightbox-nav {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+            font-size: 16px !important;
+            font-weight: normal !important;
+            cursor: pointer !important;
+            z-index: 10003 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            opacity: 0.8 !important;
+            visibility: visible !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+            pointer-events: auto !important;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8) !important;
+            opacity: 1 !important;
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+        }
+        
+        .lightbox-nav:active {
+            background: rgba(0, 0, 0, 0.9) !important;
+            transform: translateY(-50%) scale(0.98);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* S'assurer que les boutons sont visibles par défaut */
+        #lightbox-prev, #lightbox-next {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 10001;
+        }
+        
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 14px !important;
+            }
+            
+            .lightbox-prev {
+                left: 15px !important;
+            }
+            
+            .lightbox-next {
+                right: 15px !important;
+            }
+            
+            .lightbox-counter {
+                bottom: 15px !important;
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+        }
+
+
+        /* Styles pour les images cliquables */
+        #portfolioGrid .portfolio-image img {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        #portfolioGrid .portfolio-image img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 98vw;
+                max-height: 98vh;
+                margin: 10px;
+            }
+
+            .modal-content img {
+                max-height: 70vh;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+
+            .modal-info {
+                padding: 15px;
+            }
+
+            .modal-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .modal-info p {
+                font-size: 0.9rem;
+            }
+
+            /* Effet de clic sur mobile */
+            #portfolioGrid .portfolio-image img:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        /* Sous-menu toujours visible pour l'onglet actif */
+        .nav-menu li.active .nav-submenu {
+            display: block !important;
+        }
+        
+        /* Styles pour les sous-menus */
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-menu li:hover .nav-submenu {
+            display: block;
+        }
+        
+        .nav-submenu li {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-submenu .nav-link {
+            display: block !important;
+            padding: 12px 20px;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border-bottom: 1px solid #34495e;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .nav-submenu .nav-link:hover {
+            background-color: #34495e;
+            color: #ffffff !important;
+        }
+        
+        .nav-submenu .nav-link:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 150px !important;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container" style="position:relative;">
+            <div class="nav-left">
+                <a href="https://www.instagram.com/lestatouables/" target="_blank" class="nav-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="nav-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="tel:0661154068" class="nav-link" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="nav-center">
+            </div>
+            <ul id="menu" class="nav-menu">
+                <li><a href="index.html" class="nav-link">Retour à la page d'accueil</a></li>
+                <li class="active">
+                    <a href="ldermo.html" class="nav-link">LDermo</a>
+                    <ul class="nav-submenu">
+                        <li><a href="ldermo.html" class="nav-link">Présentation</a></li>
+                        <li><a href="ldermo-tarifs.html" class="nav-link">Tarification</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sinkolor.html" class="nav-link">Sinkolor</a>
+                    <ul class="nav-submenu">
+                        <li><a href="sinkolor.html" class="nav-link">Présentation</a></li>
+                        <li><a href="flash.html" class="nav-link">Flash disponibles</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#avis" class="nav-link">Avis</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- LDermo Présentation -->
+    <section id="ldermo-presentation" class="about" style="padding-top: 4rem !important; margin-top: 0 !important;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/ldermo.jpeg" alt="LDermo - Dermopigmentation" class="about-photo">
+                </div>
+                <div class="about-text">
+                    <h2>LDermo</h2>
+                    <p>Riche de plusieurs mois de formation sous le tutorat d'Anna Dermo, numéro 1 en France du tatouage réparateur et créatrice de la méthode Skin correct, Ldermo a pu recevoir les meilleurs outils et conseils visant à garantir des résultats époustouflants à sa clientèle.</p>
+                    <p>Que votre projet concerne des vergetures, une cicatrice, une peau brûlée ou greffée ou encore une reconstruction de l'aréole mammaire, Ldermo prendra le temps, lors d'une première consultation, de définir avec vous la méthode la plus adaptée à vos besoins pour que votre séance de tatouage et son résultat soient à la hauteur de vos attentes.</p>
+                    <p>Grâce à sa douceur, son empathie, sa bienveillance et ses explications, LDermo saura répondre à toutes vos questions et vous rassurer afin de chasser toute anxiété avant votre séance.</p>
+                    <div class="contact-buttons" style="margin-top:1rem;">
+                        <div class="contact-dropdown" style="position: relative; display: inline-block; margin-right:0.5rem;">
+                            <button class="btn btn-primary contact-toggle" onclick="toggleContactMenu('ldermo')">
+                                <i class="fas fa-envelope"></i> Contact
+                                <i class="fas fa-chevron-down" style="margin-left: 5px;"></i>
+                            </button>
+                            <div id="ldermo-contact-menu" class="contact-menu" style="display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; min-width: 200px;">
+                                <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="contact-menu-item">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/lestatouables/" target="_blank" class="contact-menu-item">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="tel:0661154068" class="contact-menu-item">
+                                    <i class="fas fa-phone"></i> Appeler
+                                </a>
+                            </div>
+                        </div>
+                        <a href="ldermo-tarifs.html" class="btn btn-secondary" style="display:inline-block;">Tarification</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <p class="section-subtitle">Découvrez les réalisations de LDermo</p>
+            
+            
+            <!-- LDermo -->
+            <div id="portfolio-ldermo" class="portfolio-section">
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <div class="portfolio-item" data-category="dermo">
+                        <div style="text-align:center; font-weight:600; margin-bottom:8px;">
+                            <span style="display:inline-block; padding:6px 10px; background:#f2f2f2; border-radius:999px; color:#333; font-size:0.95rem;">Avant</span>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="images/image19.jpeg" alt="Avant - Reconstruction mammaire" loading="lazy">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Avant</h3>
+                            <p>Reconstruction mammaire</p>
+                            <a href="#contact" class="portfolio-link"><i class="fas fa-envelope"></i> Demander infos</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="dermo">
+                        <div style="text-align:center; font-weight:600; margin-bottom:8px;">
+                            <span style="display:inline-block; padding:6px 10px; background:#f2f2f2; border-radius:999px; color:#333; font-size:0.95rem;">Après</span>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="images/image20.jpeg" alt="Après - Reconstruction mammaire" loading="lazy">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Après</h3>
+                            <p>Reconstruction mammaire</p>
+                            <a href="#contact" class="portfolio-link"><i class="fas fa-envelope"></i> Demander infos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-cta">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Parlons de votre projet</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:0661154068">0661154068</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Adresse du salon</h3>
+                            <p>9Av. 1ère Armée Françaises 44-45<br>54200 Toul<br>(à 20 min à pied de la gare et 10 minutes à pied de la gare routière)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Demander un devis</h3>
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/f0e504dd5aaa9ef76ab18b48c69a944c">
+                        <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous - LDermo">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Décrivez votre projet de tatouage réparateur" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Les Tatouables</h3>
+                    <p>Salon de Tatoueurs Professionnels</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/lestatouables/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Les Tatouables . Tous droits réservés.</p>
+            </div>
+            <div class="footer-creator" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #b8b8b8; font-size: 0.9rem; margin-bottom: 0.5rem;">Site créé par <strong style="color: #ffffff;">NOANWEB</strong></p>
+                <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/noan.web/" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fab fa-instagram"></i> @noan.web
+                    </a>
+                    <span style="color: #555;">•</span>
+                    <a href="https://noanwebdesign.netlify.app" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fas fa-globe"></i> noanwebdesign.netlify.app
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.8); color: white; border: none; font-size: 30px; cursor: pointer; z-index: 10005; padding: 10px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Image précédente" onclick="navigateToImage('prev')">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Image suivante" onclick="navigateToImage('next')">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">
+            <span id="current-image">1</span> / <span id="total-images">1</span>
+        </div>
+    </div>
+
+    <script type="module" src="script-firebase.js"></script>
+    <script type="module">
+    // Système de gestion des créations avec Firebase
+    import { firebaseService } from './firebase-config.js';
+    
+    (function(){
+        const ADMIN_PASSWORD = '03KinepolisdDiva23!';
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        // const toggleBtn = document.getElementById('toggleEditPortfolio'); // Bouton supprimé
+        // const addBtn = document.getElementById('addCreation'); // Bouton supprimé
+        
+        let editMode = false;
+        let isAuthorized = false;
+        let creations = [];
+        
+        function hasSessionAuth(){
+            try { return sessionStorage.getItem('ldermoPortfolioAuth') === '1'; } catch(e) { return false; }
+        }
+        
+        function setSessionAuth(on){
+            try {
+                if (on) sessionStorage.setItem('ldermoPortfolioAuth','1');
+                else sessionStorage.removeItem('ldermoPortfolioAuth');
+            } catch(e) {}
+        }
+        
+        function requestAuth(){
+            if (isAuthorized || hasSessionAuth()) { isAuthorized = true; return true; }
+            const pwd = prompt('Entrez le mot de passe pour éditer les créations :');
+            if (pwd === ADMIN_PASSWORD){
+                isAuthorized = true;
+                setSessionAuth(true);
+                return true;
+            }
+            alert('Mot de passe incorrect');
+            return false;
+        }
+        
+        async function loadCreations(){
+            const defaultCreations = [
+                { src: 'images/image19.jpeg', alt: 'Avant - Reconstruction mammaire', type: 'avant' },
+                { src: 'images/image20.jpeg', alt: 'Après - Reconstruction mammaire', type: 'après' }
+            ];
+            
+            try {
+                const firebaseCreations = await firebaseService.getLDermoCreations();
+                if (firebaseCreations.length > 0) {
+                    return firebaseCreations;
+                } else {
+                    // Si pas de créations dans Firebase, ajouter les créations par défaut
+                    for (const creation of defaultCreations) {
+                        await firebaseService.addLDermoCreation(creation);
+                    }
+                    return defaultCreations;
+                }
+            } catch (error) {
+                console.error('Erreur Firebase, fallback vers localStorage:', error);
+                // Fallback vers localStorage
+                try {
+                    const raw = localStorage.getItem('ldermoCreations.v1');
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (Array.isArray(parsed)) {
+                            return parsed.length === 0 ? defaultCreations : parsed;
+                        }
+                    }
+                } catch(e) {}
+                return defaultCreations;
+            }
+        }
+        
+        async function saveCreations(creations){
+            // Les créations sont maintenant gérées individuellement par Firebase
+            // Cette fonction est gardée pour la compatibilité mais ne fait rien
+        }
+        
+        function renderCreations(){
+            portfolioGrid.innerHTML = '';
+            creations.forEach((creation, index) => {
+                const div = document.createElement('div');
+                div.className = 'portfolio-item';
+                div.setAttribute('data-category', 'dermo');
+                div.style.marginBottom = '8px';
+                
+                if (creation.type) {
+                    const labelDiv = document.createElement('div');
+                    labelDiv.style.cssText = 'text-align:center; font-weight:600; margin-bottom:8px;';
+                    
+                    const span = document.createElement('span');
+                    span.style.cssText = 'display:inline-block; padding:6px 10px; background:#f2f2f2; border-radius:999px; color:#333; font-size:0.95rem;';
+                    span.textContent = creation.type.charAt(0).toUpperCase() + creation.type.slice(1);
+                    
+                    labelDiv.appendChild(span);
+                    div.appendChild(labelDiv);
+                }
+                
+                const portfolioImage = document.createElement('div');
+                portfolioImage.className = 'portfolio-image';
+                portfolioImage.style.marginBottom = '0';
+                
+                const img = document.createElement('img');
+                img.src = creation.src;
+                img.alt = creation.alt;
+                img.loading = 'lazy';
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openLightbox(creation.src, creation.alt));
+                
+                portfolioImage.appendChild(img);
+                
+                div.appendChild(portfolioImage);
+                
+                if (editMode) {
+                    const controls = document.createElement('div');
+                    controls.style.cssText = 'position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10;';
+                    
+                    const editButton = document.createElement('button');
+                    editButton.className = 'btn btn-secondary';
+                    editButton.type = 'button';
+                    editButton.textContent = 'Modifier';
+                    editButton.style.fontSize = '0.7rem';
+                    editButton.style.padding = '2px 6px';
+                    editButton.addEventListener('click', () => editCreation(creation.id || index));
+                    
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'btn btn-secondary';
+                    deleteButton.type = 'button';
+                    deleteButton.textContent = 'Supprimer';
+                    deleteButton.style.fontSize = '0.7rem';
+                    deleteButton.style.padding = '2px 6px';
+                    deleteButton.addEventListener('click', () => deleteCreation(creation.id || index));
+                    
+                    controls.appendChild(editButton);
+                    controls.appendChild(deleteButton);
+                    div.style.position = 'relative';
+                    div.appendChild(controls);
+                }
+                
+                portfolioGrid.appendChild(div);
+            });
+        }
+        
+        function setEditMode(on){
+            editMode = !!on;
+            // addBtn.style.display = on ? '' : 'none'; // Bouton supprimé
+            // toggleBtn.textContent = on ? 'Terminer' : 'Gérer les créations'; // Bouton supprimé
+            renderCreations();
+        }
+        
+        async function editCreation(id){
+            if (!requestAuth()) return;
+            const creation = creations.find(c => c.id === id || creations.indexOf(c) === id);
+            if (!creation) return;
+            
+            // Créer le modal d'édition
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 15px;
+                    max-width: 500px;
+                    width: 90%;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                ">
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Modifier la création</h3>
+                    
+                    <!-- Zone de drag & drop -->
+                    <div id="dropZone" style="
+                        border: 3px dashed #ddd;
+                        border-radius: 10px;
+                        padding: 2rem;
+                        text-align: center;
+                        margin-bottom: 1.5rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        background: #f9f9f9;
+                    ">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <p style="margin: 0; color: #666;">Glissez-déposez une nouvelle image ou cliquez pour sélectionner</p>
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    </div>
+                    
+                    <!-- Aperçu de l'image actuelle -->
+                    <div id="currentImage" style="margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #333;">Image actuelle :</p>
+                        <img id="currentImg" src="${creation.src}" style="max-width: 100%; max-height: 200px; border-radius: 8px;">
+                    </div>
+                    
+                    <!-- Aperçu de la nouvelle image -->
+                    <div id="imagePreview" style="display: none; margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #333;">Nouvelle image :</p>
+                        <img id="previewImg" style="max-width: 100%; max-height: 200px; border-radius: 8px;">
+                    </div>
+                    
+                    <!-- Formulaire -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Description :</label>
+                        <input type="text" id="creationAlt" value="${creation.alt}" style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 2px solid #ddd;
+                            border-radius: 8px;
+                            font-size: 1rem;
+                        ">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Type (optionnel) :</label>
+                        <select id="creationType" style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 2px solid #ddd;
+                            border-radius: 8px;
+                            font-size: 1rem;
+                        ">
+                            <option value="">Sélectionner un type</option>
+                            <option value="avant" ${creation.type === 'avant' ? 'selected' : ''}>Avant</option>
+                            <option value="après" ${creation.type === 'après' ? 'selected' : ''}>Après</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Boutons -->
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <button id="cancelBtn" style="
+                            padding: 0.8rem 1.5rem;
+                            border: 2px solid #ddd;
+                            background: white;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Annuler</button>
+                        <button id="saveBtn" style="
+                            padding: 0.8rem 1.5rem;
+                            background: linear-gradient(135deg, #2c3e50, #34495e);
+                            color: white;
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Modifier</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Variables
+            let selectedFile = null;
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('fileInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            const creationAlt = document.getElementById('creationAlt');
+            const creationType = document.getElementById('creationType');
+            const saveBtn = document.getElementById('saveBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            
+            // Fonction pour afficher l'aperçu
+            function showPreview(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImg.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            // Event listeners
+            dropZone.addEventListener('click', () => fileInput.click());
+            
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#2c3e50';
+                dropZone.style.background = '#f0f2f5';
+            });
+            
+            dropZone.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#ddd';
+                dropZone.style.background = '#f9f9f9';
+            });
+            
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#ddd';
+                dropZone.style.background = '#f9f9f9';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0 && files[0].type.startsWith('image/')) {
+                    selectedFile = files[0];
+                    showPreview(selectedFile);
+                }
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    selectedFile = e.target.files[0];
+                    showPreview(selectedFile);
+                }
+            });
+            
+            saveBtn.addEventListener('click', async () => {
+                if (!creationAlt.value.trim()) {
+                    alert('Veuillez entrer une description');
+                    return;
+                }
+                
+                try {
+                    let newSrc = creation.src; // Garder l'ancienne image par défaut
+                    
+                    // Si une nouvelle image est sélectionnée, la convertir en base64
+                    if (selectedFile) {
+                        newSrc = await convertToBase64(selectedFile);
+                    }
+                    
+                    const updatedCreation = {
+                        src: newSrc,
+                        alt: creationAlt.value.trim(),
+                        type: creationType.value.trim()
+                    };
+                    
+                    if (creation.id) {
+                        await firebaseService.updateLDermoCreation(creation.id, updatedCreation);
+                    } else {
+                        // Fallback localStorage
+                        const index = creations.indexOf(creation);
+                        creations[index] = updatedCreation;
+                        localStorage.setItem('ldermoCreations.v1', JSON.stringify(creations));
+                    }
+                    
+                    await loadAndRenderCreations();
+                    
+                    // Fermer le modal
+                    document.body.removeChild(modal);
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour:', error);
+                    alert('Erreur lors de la mise à jour');
+                }
+            });
+            
+            cancelBtn.addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+            
+            // Fermer avec Escape
+            document.addEventListener('keydown', function escapeHandler(e) {
+                if (e.key === 'Escape') {
+                    document.body.removeChild(modal);
+                    document.removeEventListener('keydown', escapeHandler);
+                }
+            });
+        }
+        
+        async function deleteCreation(id){
+            if (!requestAuth()) return;
+            if (!confirm('Supprimer cette création ?')) return;
+            
+            try {
+                const creation = creations.find(c => c.id === id || creations.indexOf(c) === id);
+                if (creation && creation.id) {
+                    // Suppression dans Firebase
+                    await firebaseService.deleteLDermoCreation(creation.id);
+                } else {
+                    // Fallback localStorage
+                    const index = creations.indexOf(creation);
+                    creations.splice(index, 1);
+                    localStorage.setItem('ldermoCreations.v1', JSON.stringify(creations));
+                }
+                await loadAndRenderCreations();
+            } catch (error) {
+                console.error('Erreur lors de la suppression:', error);
+                alert('Erreur lors de la suppression');
+            }
+        }
+        
+        // Fonction pour convertir l'image en base64
+        function convertToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // Fonction pour afficher le modal d'ajout
+        function showAddCreationModal() {
+            if (!requestAuth()) return;
+            
+            // Créer le modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 15px;
+                    max-width: 500px;
+                    width: 90%;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                ">
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Ajouter une nouvelle création</h3>
+                    
+                    <!-- Zone de drag & drop -->
+                    <div id="dropZone" style="
+                        border: 3px dashed #ddd;
+                        border-radius: 10px;
+                        padding: 2rem;
+                        text-align: center;
+                        margin-bottom: 1.5rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        background: #f9f9f9;
+                    ">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <p style="margin: 0; color: #666;">Glissez-déposez une image ici ou cliquez pour sélectionner</p>
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    </div>
+                    
+                    <!-- Aperçu de l'image -->
+                    <div id="imagePreview" style="display: none; margin-bottom: 1.5rem;">
+                        <img id="previewImg" style="max-width: 100%; max-height: 200px; border-radius: 8px;">
+                    </div>
+                    
+                    <!-- Formulaire -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Description :</label>
+                        <input type="text" id="creationAlt" placeholder="Description de la création" style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 2px solid #ddd;
+                            border-radius: 8px;
+                            font-size: 1rem;
+                        ">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333;">Type (optionnel) :</label>
+                        <select id="creationType" style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 2px solid #ddd;
+                            border-radius: 8px;
+                            font-size: 1rem;
+                        ">
+                            <option value="">Sélectionner un type</option>
+                            <option value="avant">Avant</option>
+                            <option value="après">Après</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Boutons -->
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <button id="cancelBtn" style="
+                            padding: 0.8rem 1.5rem;
+                            border: 2px solid #ddd;
+                            background: white;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Annuler</button>
+                        <button id="saveBtn" style="
+                            padding: 0.8rem 1.5rem;
+                            background: linear-gradient(135deg, #27ae60, #2ecc71);
+                            color: white;
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Ajouter</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Variables
+            let selectedFile = null;
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('fileInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            const creationAlt = document.getElementById('creationAlt');
+            const creationType = document.getElementById('creationType');
+            const saveBtn = document.getElementById('saveBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            
+            // Fonction pour afficher l'aperçu
+            function showPreview(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImg.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            // Event listeners
+            dropZone.addEventListener('click', () => fileInput.click());
+            
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#27ae60';
+                dropZone.style.background = '#f0f8f0';
+            });
+            
+            dropZone.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#ddd';
+                dropZone.style.background = '#f9f9f9';
+            });
+            
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.style.borderColor = '#ddd';
+                dropZone.style.background = '#f9f9f9';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0 && files[0].type.startsWith('image/')) {
+                    selectedFile = files[0];
+                    showPreview(selectedFile);
+                }
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    selectedFile = e.target.files[0];
+                    showPreview(selectedFile);
+                }
+            });
+            
+            saveBtn.addEventListener('click', async () => {
+                if (!selectedFile) {
+                    alert('Veuillez sélectionner une image');
+                    return;
+                }
+                
+                if (!creationAlt.value.trim()) {
+                    alert('Veuillez entrer une description');
+                    return;
+                }
+                
+                try {
+                    // Convertir l'image en base64
+                    const base64 = await convertToBase64(selectedFile);
+                    
+                    const newCreation = {
+                        src: base64,
+                        alt: creationAlt.value.trim(),
+                        type: creationType.value.trim()
+                    };
+                    
+                    await firebaseService.addLDermoCreation(newCreation);
+                    await loadAndRenderCreations();
+                    
+                    // Fermer le modal
+                    document.body.removeChild(modal);
+                } catch (error) {
+                    console.error('Erreur lors de l\'ajout:', error);
+                    alert('Erreur lors de l\'ajout de la création');
+                }
+            });
+            
+            cancelBtn.addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+            
+            // Fermer avec Escape
+            document.addEventListener('keydown', function escapeHandler(e) {
+                if (e.key === 'Escape') {
+                    document.body.removeChild(modal);
+                    document.removeEventListener('keydown', escapeHandler);
+                }
+            });
+        }
+        
+        async function addNewCreation(){
+            showAddCreationModal();
+        }
+        
+        async function loadAndRenderCreations() {
+            creations = await loadCreations();
+            renderCreations();
+        }
+        
+        // toggleBtn.addEventListener('click', () => {
+        //     if (!editMode) {
+        //         if (!requestAuth()) return;
+        //     }
+        //     setEditMode(!editMode);
+        // }); // Bouton supprimé
+        
+        // addBtn.addEventListener('click', addNewCreation); // Bouton supprimé
+        
+        // Initialiser les créations au chargement de la page
+        loadAndRenderCreations();
+        
+        // Écouter les changements en temps réel
+        firebaseService.onLDermoCreationsChange((snapshot) => {
+            const newCreations = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            creations = newCreations;
+            renderCreations();
+        });
+    })();
+    
+    // Fonctions pour la lightbox
+    function openLightbox(src, alt) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxContent = document.querySelector('.lightbox-content');
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.style.display = 'block';
+        lightboxContent.style.maxWidth = '100%';
+        lightboxContent.style.maxHeight = '100%';
+        lightboxContent.style.display = 'flex';
+        lightboxContent.style.justifyContent = 'center';
+        lightboxContent.style.alignItems = 'center';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Event listeners pour la lightbox
+    document.getElementById('lightbox').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+    
+    </script>
+    
+    <script>
+    // Fonction pour gérer les menus de contact
+    function toggleContactMenu(artist) {
+        const menu = document.getElementById(artist + '-contact-menu');
+        const allMenus = document.querySelectorAll('.contact-menu');
+        
+        // Fermer tous les autres menus
+        allMenus.forEach(m => {
+            if (m.id !== artist + '-contact-menu') {
+                m.style.display = 'none';
+            }
+        });
+        
+        // Toggle le menu actuel
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    }
+    
+    // Fermer les menus quand on clique ailleurs
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.contact-dropdown')) {
+            const allMenus = document.querySelectorAll('.contact-menu');
+            allMenus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    });
+    </script>
+    
+    <script>
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-controls', 'menu');
+
+        // Gestionnaire pour clic et toucher (mobile)
+        function handleHamburgerClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            hamburger.setAttribute('aria-label', isActive ? 'Fermer le menu' : 'Ouvrir le menu');
+        }
+        
+        // Ajouter les événements pour clic et toucher
+        hamburger.addEventListener('click', handleHamburgerClick);
+        hamburger.addEventListener('touchstart', handleHamburgerClick);
+
+        // Close menu only when clicking on a leaf link (sans sous-menu) ou un lien de sous-menu
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const li = link.parentElement;
+                const hasDirectSubmenu = li && li.querySelector(':scope > .nav-submenu');
+                if (hasDirectSubmenu) {
+                    // Parent avec sous-menu: ne pas fermer ici (le toggle gère l'ouverture)
+                    return;
+                }
+                // Lien de sous-menu ou lien simple: fermer le panneau
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+            });
+        });
+
+        // Toggle sous-menus dans le panneau hamburger (tous écrans)
+        document.querySelectorAll('.nav-menu > li > a').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const parent = anchor.parentElement;
+                const submenu = parent.querySelector('.nav-submenu');
+                if (submenu) {
+                    // Sur mobile, ne pas empêcher la navigation du tout
+                    if (window.innerWidth <= 768) {
+                        // Laisser la navigation se faire normalement
+                        // Fermer le menu mobile après navigation
+                        setTimeout(() => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                            hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+                        }, 100);
+                        // Ne pas empêcher l'événement
+                        return;
+                    } else {
+                        // Sur desktop, empêcher la navigation et gérer le hover
+                        e.preventDefault();
+                        e.stopPropagation();
+                        parent.classList.toggle('is-open');
+                    }
+                }
+            });
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Navbar background change on scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(15, 15, 15, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    </script>
+    
+    <script>
+    // Gestion des sous-menus
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('.nav-menu > li');
+        
+        menuItems.forEach(item => {
+            const submenu = item.querySelector('.nav-submenu');
+            if (submenu) {
+                const mainLink = item.querySelector('a');
+                
+                // Gestion du survol pour desktop
+                item.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'block';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'none';
+                    }
+                });
+                
+                // Gestion du clic pour mobile
+                mainLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        
+                        // Fermer tous les autres sous-menus
+                        menuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                const otherSubmenu = otherItem.querySelector('.nav-submenu');
+                                if (otherSubmenu) {
+                                    otherSubmenu.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Toggle le sous-menu actuel
+                        if (submenu.style.display === 'none' || submenu.style.display === '') {
+                            submenu.style.display = 'block';
+                        } else {
+                            submenu.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Fermer les sous-menus quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-menu')) {
+                menuItems.forEach(item => {
+                    const submenu = item.querySelector('.nav-submenu');
+                    if (submenu) {
+                        submenu.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+    
+    // Variables globales pour la navigation dans la lightbox
+    let currentImageIndex = 0;
+    let allImages = [];
+    let isLightboxOpen = false; // Protection contre l'ouverture multiple
+    let lastClickTime = 0; // Protection contre les clics rapides
+    
+    // Fonctions de lightbox - GLOBALES
+    function openLightbox(src, alt) {
+        // Protection contre les clics rapides (délai de 300ms)
+        const now = Date.now();
+        if (now - lastClickTime < 300) {
+            return;
+        }
+        lastClickTime = now;
+        
+        // Protection contre l'ouverture multiple
+        if (isLightboxOpen) {
+            return;
+        }
+        
+        isLightboxOpen = true;
+        
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Récupérer toutes les images du portfolio
+        const portfolioImages = document.querySelectorAll('#portfolioGrid .portfolio-image img');
+        allImages = Array.from(portfolioImages).map(img => ({
+            src: img.src,
+            alt: img.alt
+        }));
+        
+        // Trouver l'index de l'image actuelle
+        currentImageIndex = allImages.findIndex(img => img.src === src);
+        if (currentImageIndex === -1) currentImageIndex = 0;
+        
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Mettre à jour le compteur
+            updateLightboxCounter();
+            
+            // Afficher/masquer les boutons de navigation
+            updateNavigationButtons();
+        }
+    }
+    
+    function updateLightboxCounter() {
+        const currentSpan = document.getElementById('current-image');
+        const totalSpan = document.getElementById('total-images');
+        
+        if (currentSpan && totalSpan) {
+            currentSpan.textContent = currentImageIndex + 1;
+            totalSpan.textContent = allImages.length;
+        }
+    }
+    
+    function updateNavigationButtons() {
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        
+        if (prevBtn && nextBtn) {
+            if (allImages.length <= 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+            }
+        }
+    }
+    
+    function navigateToImage(direction) {
+        if (allImages.length <= 1) return;
+        
+        if (direction === 'prev') {
+            currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : allImages.length - 1;
+        } else if (direction === 'next') {
+            currentImageIndex = currentImageIndex < allImages.length - 1 ? currentImageIndex + 1 : 0;
+        }
+        
+        const lightboxImg = document.getElementById('lightbox-img');
+        if (lightboxImg && allImages[currentImageIndex]) {
+            lightboxImg.src = allImages[currentImageIndex].src;
+            lightboxImg.alt = allImages[currentImageIndex].alt;
+            updateLightboxCounter();
+        }
+    }
+    
+    function closeLightbox() {
+        isLightboxOpen = false; // Réinitialiser le flag
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    
+    // Ajouter les gestionnaires de clic sur les images du portfolio
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioImages = document.querySelectorAll('#portfolioGrid .portfolio-image img');
+        
+        portfolioImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            
+            img.addEventListener('click', function() {
+                openLightbox(this.src, this.alt);
+            });
+        });
+    });
+    
+    // Navigation au clavier pour la lightbox
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.style.display === 'block') {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                navigateToImage('prev');
+            } else if (e.key === 'ArrowRight') {
+                navigateToImage('next');
+            }
+        }
+    });
+    
+    // Event listener direct sur la croix avec délai
+    setTimeout(function() {
+        const closeBtn = document.querySelector('.lightbox-close');
+        if (closeBtn) {
+            console.log('Event listener ajouté à la croix avec délai');
+            closeBtn.addEventListener('click', function(e) {
+                console.log('Clic sur la croix détecté');
+                e.preventDefault();
+                e.stopPropagation();
+                closeLightbox();
+            });
+        } else {
+            console.log('Croix non trouvée');
+        }
+    }, 3000);
+    
+    // Event listener supplémentaire avec délai encore plus long
+    setTimeout(function() {
+        const closeBtn = document.querySelector('.lightbox-close');
+        if (closeBtn) {
+            console.log('Event listener supplémentaire ajouté à la croix');
+            closeBtn.addEventListener('mousedown', function(e) {
+                console.log('Mousedown sur la croix détecté');
+                e.preventDefault();
+                e.stopPropagation();
+                closeLightbox();
+            });
+        }
+    }, 5000);
+    
+    // Event listener global pour la croix
+    document.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('lightbox-close')) {
+            console.log('Clic global sur la croix détecté');
+            e.preventDefault();
+            e.stopPropagation();
+            closeLightbox();
+        }
+    });
+    
+    // Event listener global pour mousedown
+    document.addEventListener('mousedown', function(e) {
+        if (e.target && e.target.classList.contains('lightbox-close')) {
+            console.log('Mousedown global sur la croix détecté');
+            e.preventDefault();
+            e.stopPropagation();
+            closeLightbox();
+        }
+    });
+    
+    </script>
+</body>
+</html>

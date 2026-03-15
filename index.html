@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Tatouables - Salon de tatouage</title>
+    <meta name="description" content="Les Tatouables – Salon de tatouage à Toul. Présentations, tarifs LDermo, flash disponibles et contacts.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Amélioration de la lisibilité des titres et libellés du portfolio */
+        #portfolio .section-subtitle {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #f5f5f5;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.65);
+        }
+        #portfolio .portfolio-overlay p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-link {
+            font-size: 0.98rem;
+            font-weight: 700;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+        }
+        
+        /* Styles pour les informations du salon dans la section hero */
+        .hero-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: #333;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        .hero-address h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .hero-address p {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero-distance {
+            font-style: italic;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero-phone {
+            margin-top: 1rem;
+        }
+        .phone-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .phone-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .phone-link i {
+            font-size: 1.2rem;
+        }
+        
+        /* Styles pour les menus de contact */
+        .contact-menu-item {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        .contact-menu-item:hover {
+            background-color: #f5f5f5;
+            color: #2c3e50;
+        }
+        .contact-menu-item:last-child {
+            border-bottom: none;
+        }
+        .contact-menu-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            /* Corriger le problème de la navbar qui coupe le contenu */
+            body {
+                padding-top: 100px !important;
+            }
+            
+            /* S'assurer que le contenu principal n'est pas coupé */
+            main, .hero, .artists, .services, .contact {
+                margin-top: 0 !important;
+            }
+            
+            .hero {
+                padding-top: 2rem !important;
+            }
+            
+            .artists {
+                padding-top: 2rem !important;
+            }
+            
+            .services {
+                padding-top: 2rem !important;
+            }
+            
+            .contact {
+                padding-top: 2rem !important;
+            }
+            
+            .hero-info {
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+                text-align: center;
+                padding: 20px;
+                margin-top: 0;
+            }
+            
+            .hero-info img {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-bottom: 20px !important;
+                margin-top: 40px !important;
+                transform: scale(1.3) !important;
+            }
+            
+            .hero-logo-right {
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+                text-align: center;
+                margin: 40px 0 20px 0;
+                order: -1;
+            }
+            
+            .hero-logo-right img {
+                max-width: 120px !important;
+                height: auto !important;
+            }
+        }
+        
+        /* Cercle néon et animation de flottement pour le logo */
+        .hero-logo-right {
+            position: relative;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .hero-logo-right img {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 0 2px #ffffff) 
+                    drop-shadow(0 0 4px #ffffff) 
+                    drop-shadow(0 0 6px #ffffff) 
+                    drop-shadow(0 0 8px #ffffff) 
+                    drop-shadow(0 0 10px #ffffff);
+            animation: logoNeon 2s ease-in-out infinite alternate;
+        }
+        
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes logoNeon {
+            0% {
+                filter: drop-shadow(0 0 2px #ffffff) 
+                        drop-shadow(0 0 4px #ffffff) 
+                        drop-shadow(0 0 6px #ffffff) 
+                        drop-shadow(0 0 8px #ffffff) 
+                        drop-shadow(0 0 10px #ffffff);
+            }
+            100% {
+                filter: drop-shadow(0 0 3px #ffffff) 
+                        drop-shadow(0 0 6px #ffffff) 
+                        drop-shadow(0 0 9px #ffffff) 
+                        drop-shadow(0 0 12px #ffffff) 
+                        drop-shadow(0 0 15px #ffffff);
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Styles pour les sous-menus sur mobile */
+            .nav-submenu {
+                position: static !important;
+                display: none !important;
+                background: #1a1a1a !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin-top: 5px !important;
+                min-width: auto !important;
+                width: 100% !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                left: auto !important;
+                top: auto !important;
+                z-index: 999 !important;
+            }
+            
+            .nav-menu li:hover .nav-submenu,
+            .nav-menu li.active .nav-submenu {
+                display: block !important;
+            }
+            
+            .nav-submenu .nav-link {
+                display: block !important;
+                padding: 10px 15px !important;
+                font-size: 13px !important;
+                border-bottom: 1px solid #333333 !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                background: transparent !important;
+            }
+            
+            .nav-submenu .nav-link:last-child {
+                border-bottom: none !important;
+            }
+            
+            .nav-submenu li {
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .contact-dropdown {
+                margin-bottom: 10px;
+                margin-right: 0 !important;
+            }
+            
+            .contact-menu {
+                position: relative !important;
+                display: none;
+                margin-top: 10px;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+            
+            .contact-menu-item {
+                background: #1a1a1a;
+                color: white;
+                margin: 5px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            .hero-address h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-address p {
+                font-size: 1rem;
+            }
+            
+            .phone-link {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .nav-center img {
+                height: 30px !important;
+                width: auto !important;
+            }
+            
+            /* S'assurer que le menu hamburger permet l'affichage des sous-menus */
+            .nav-menu {
+                overflow: visible !important;
+            }
+        }
+        
+        /* Styles pour les sous-menus */
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-menu li:hover .nav-submenu {
+            display: block;
+        }
+        
+        .nav-submenu li {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-submenu .nav-link {
+            display: block !important;
+            padding: 12px 20px;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border-bottom: 1px solid #34495e;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .nav-submenu .nav-link:hover {
+            background-color: #34495e;
+            color: #ffffff !important;
+        }
+        
+        .nav-submenu .nav-link:last-child {
+            border-bottom: none;
+        }
+        
+        /* Personnalisation de la barre de défilement */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2c3e50;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #34495e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2c3e50;
+        }
+        
+        /* Positionnement du logo circulaire */
+        .hero-logo-right {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="padding-top: 80px !important;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container" style="position:relative;">
+            <div class="nav-left">
+                <a href="https://www.instagram.com/lestatouables/" target="_blank" class="nav-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="nav-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="tel:0661154068" class="nav-link" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="nav-center">
+            </div>
+            <ul id="menu" class="nav-menu">
+                <li class="active">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                </li>
+                <li>
+                    <a href="ldermo.html" class="nav-link">LDermo</a>
+                    <ul class="nav-submenu">
+                        <li><a href="ldermo.html" class="nav-link">Présentation</a></li>
+                        <li><a href="ldermo-tarifs.html" class="nav-link">Tarification</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sinkolor.html" class="nav-link">Sinkolor</a>
+                    <ul class="nav-submenu">
+                        <li><a href="sinkolor.html" class="nav-link">Présentation</a></li>
+                        <li><a href="flash.html" class="nav-link">Flash disponibles</a></li>
+                    </ul>
+                </li>
+                <li><a href="#avis" class="nav-link">Avis</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero" style="padding-top: 1rem !important; margin-top: 0 !important;">
+        <div class="hero-info">
+            <div class="hero-logo-right">
+                <img src="images/logo.png" alt="Les Tatouables - Logo" style="max-width: 150px; height: auto; display: block; margin: 0 auto 20px auto;">
+            </div>
+            <img src="images/logoo-removebg-preview.png" alt="Les Tatouables - Logo" style="max-width: 1200px; height: auto; display: block; margin-bottom: -160px;">
+        </div>
+    </section>
+
+    <!-- Vignettes À propos -->
+    <section id="tatoueurs" class="artists">
+        <div class="container">
+            <h2 class="section-title">À propos</h2>
+            <p class="section-subtitle">Deux expertises complémentaires</p>
+            <div class="artists-grid">
+                <article class="artist-card">
+                    <div class="artist-info">
+                        <h3>S'inkolor</h3>
+                        <p>Spécialisé dans le domaine du manga, de la pop culture et de l’univers Disney, Sinkolor saura répondre à toutes vos demandes de projet grâce à son œil expert.</p>
+                        <p><a class="btn btn-secondary" href="sinkolor.html#sinkolor-presentation">Voir la présentation</a></p>
+                    </div>
+                </article>
+                <article class="artist-card">
+                    <div class="artist-info">
+                        <h3>LDermo</h3>
+                        <p>Spécialisée dans le tatouage reconstructif, LDermo saura vous guider, comprendre et satisfaire vos attentes grâce à son professionnalisme, sa douceur et son empathie.</p>
+                        <p><a class="btn btn-secondary" href="ldermo.html#ldermo-presentation">Voir la présentation</a></p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">Notre accompagnement</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Spécialités</h3>
+                    <p>tatouage artistique et tatouage réparateur</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Hygiène</h3>
+                    <p>Respect strict des normes d’hygiène</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Accompagnement personnalisé</h3>
+                    <p>Nous vous accompagnons dans tout le processus de votre tatouage, que ce soit avant, pendant et après.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Google Section -->
+    <section id="avis" class="reviews">
+        <div class="container">
+            <!-- Avis clients (saisie manuelle) -->
+            <div id="google-reviews" style="max-width:600px;margin:auto;">
+                <div style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:2.5rem 2rem;margin-bottom:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+                    <h2 style="text-align:center;color:#ffffff;font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;">⭐ Nos Avis Google</h2>
+                    <p style="text-align:center;font-size:1.2rem;color:#b8b8b8;margin-bottom:0;">
+                        <strong style="color:#ffffff;font-size:2rem;">5</strong> / 5
+                    </p>
+                    <p style="text-align:center;color:#b8b8b8;font-size:1rem;margin-top:0.5rem;">
+                        7 avis clients · Tous 5 étoiles
+                    </p>
+                </div>
+                <div style="display:grid;gap:1.5rem;">
+                    <!-- Avis Romuald Degli Esposti -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">R</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Romuald Degli Esposti</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"Un salon de tatouage juste parfait, à peine passer la porte on se sent bien et au bon endroit. Franck le tatoueur et sa compagne sont super accueillants. Pour notre part c'est lui qui nous a tatoué, pour la seconde fois… un vrai moment de plaisir, d'échange, de partage. Franck est très humain et d'un professionnalisme parfait. Tout est parfait, rien à redire sur l'hygiène. Je recommande sans hésitation. Et je dis rdv pour le prochain…"</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 2 semaines</small>
+                    </div>
+                    <!-- Avis Corentin Weilland -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">C</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Corentin Weilland</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"J'avais rendez-vous pour mon premier tatouage aujourd'hui. Énormément stressé mais Sinkolor a réussi à me mettre en confiance très rapidement. Super accueil, super salon, très bien situé. À l'écoute, de bons conseils, Sinkolor a réussi à donner vie à mon projet. Très étonné de constater qu'il existe une différence énorme entre la proposition papier et le résultat final qui est tout simplement énormissime. Un grand merci pour ce moment et je suis persuadé que l'on se reverra bientôt. Corentin."</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 2 semaines</small>
+                    </div>
+                    <!-- Avis Dygna Misse -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">D</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Dygna Misse</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"Les Tatouables, un salon de tatouage au top où professionnalisme et bonne ambiance sont les maîtres mots. Sinkolor est un tatoueur très professionnel, très gentil et toujours à l'écoute du client pour son projet. Il met aussi bien à l'aise le client que l'accompagnateur. Je vous le recommande à 100 %, que vous soyez de la ville ou à des milliers de kilomètres ! Le prix est abordable pour la qualité de travail proposé. Merci encore à Franck pour les super moments passés, hâte de repasser ! Local très propre, les règles d'hygiène sont respectées. Salon très professionnel, à l'écoute de la demande sur le projet (ou flash) du client."</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a un mois</small>
+                    </div>
+                    <!-- Avis Lorette CEC -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">L</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Lorette CEC</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"Merci, Franck a su mettre à l'aise. Il est accueillant et bienveillant. Il a répondu à mes attentes et mes questions. Il a fait un superbe travail. On ressent qu'il y met tout son professionnalisme et son amour pour vous tatouer. Le résultat de Mulan est au top du top. Je reviendrai dès que possible, c'est sûr. L'accès au salon est hyper facile et en plus tu as une place attitrée pour te garer, ça c'est un gros plus. Les locaux sont propres et c'est chauffé !"</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 3 mois</small>
+                    </div>
+                    <!-- Avis Noah Gaillard -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">N</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Noah Gaillard</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"Je suis tellement heureux d'avoir choisi Franck pour réaliser mon premier tatouage ! Le gars est un amour, un super accueil et une super séance du début à la fin ! Il a su me mettre en confiance dès le début et le résultat est splendide ! Un grand merci à Franck, je ne peux que vous recommander d'aller visiter le salon. À une prochaine peut-être ;)"</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 2 mois</small>
+                    </div>
+                    <!-- Avis Virginie Beclier -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">V</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Virginie Beclier</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"J'ai confié 2 de mes projets à Franck et le troisième arrive en février. C'est quelqu'un de très professionnel, à l'écoute, très agréable et qui met en confiance très vite. J'ai hâte de voir le nouveau salon, car je l'ai connu à Nancy et maintenant je viendrai le voir à Toul sans aucune hésitation ! Si vous aimez la pop culture, c'est une adresse qu'il faut absolument connaître dans le Grand Est ! Foncez, vous n'allez pas le regretter ;)"</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 2 mois</small>
+                    </div>
+                    <!-- Avis Kevin LECLERE-VUE -->
+                    <div class="review-card" style="background:#2d2d2d;border:1px solid #333;border-radius:15px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease;">
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                            <div style="width:50px;height:50px;background:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;font-weight:600;">K</div>
+                            <div>
+                                <strong style="color:#ffffff;font-size:1.1rem;display:block;margin-bottom:0.3rem;">Kevin Leclere-Vue</strong>
+                                <span style="color:#FFD700;font-size:1rem;">★★★★★</span>
+                            </div>
+                        </div>
+                        <p style="font-size:1rem;color:#e0e0e0;line-height:1.6;margin-bottom:0.8rem;font-style:italic;">"Franck est un superbe artiste tatoueur, agréable et à l'écoute. Son travail est très soigné et esthétique. Il maîtrise très bien le style Disney et le tatouage en couleur. Je vous le recommande."</p>
+                        <small style="color:#b8b8b8;font-size:0.9rem;">il y a 2 mois</small>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:2rem;">
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJxdQjnRWvlEcRRpXxQEALOOI" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;background:#4285f4;color:#ffffff;padding:0.8rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;">
+                        <span>Voir tous les avis sur Google</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="reviews-cta" style="margin-top: 2rem;">
+                <h3>Partagez votre expérience</h3>
+                <p>Votre avis nous aide à améliorer nos services</p>
+                <a href="https://share.google/93Wv2H993KK030QTM" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-star"></i>
+                    Laisser un avis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Parlons de votre projet</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:0661154068">0661154068</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Adresse du salon</h3>
+                            <p>9Av. 1ère Armée Françaises 44-45<br>54200 Toul<br>(à 20 min à pied de la gare et 10 minutes à pied de la gare routière)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Demander un devis</h3>
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/f0e504dd5aaa9ef76ab18b48c69a944c">
+                        <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous - Les Tatouables">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Décrivez votre projet de tatouage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Les Tatouables</h3>
+                    <p>Salon de  Tatoueurs Professionnels</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/lestatouables/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Les Tatouables . Tous droits réservés.</p>
+            </div>
+            <div class="footer-creator" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #b8b8b8; font-size: 0.9rem; margin-bottom: 0.5rem;">Site créé par <strong style="color: #ffffff;">NOANWEB</strong></p>
+                <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/noan.web/" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fab fa-instagram"></i> @noan.web
+                    </a>
+                    <span style="color: #555;">•</span>
+                    <a href="https://noanwebdesign.netlify.app" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fas fa-globe"></i> noanwebdesign.netlify.app
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="script-firebase.js"></script>
+    
+    
+    <script>
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-controls', 'menu');
+
+        // Gestionnaire pour clic et toucher (mobile)
+        function handleHamburgerClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            hamburger.setAttribute('aria-label', isActive ? 'Fermer le menu' : 'Ouvrir le menu');
+        }
+        
+        // Ajouter les événements pour clic et toucher
+        hamburger.addEventListener('click', handleHamburgerClick);
+        hamburger.addEventListener('touchstart', handleHamburgerClick);
+
+        // Close menu only when clicking on a leaf link (sans sous-menu) ou un lien de sous-menu
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const li = link.parentElement;
+                const hasDirectSubmenu = li && li.querySelector(':scope > .nav-submenu');
+                if (hasDirectSubmenu) {
+                    // Parent avec sous-menu: ne pas fermer ici (le toggle gère l'ouverture)
+                    return;
+                }
+                // Lien de sous-menu ou lien simple: fermer le panneau
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+            });
+        });
+
+        // Toggle sous-menus dans le panneau hamburger (tous écrans)
+        document.querySelectorAll('.nav-menu > li > a').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const parent = anchor.parentElement;
+                const submenu = parent.querySelector('.nav-submenu');
+                if (submenu) {
+                    // Sur mobile, ne pas empêcher la navigation du tout
+                    if (window.innerWidth <= 768) {
+                        // Laisser la navigation se faire normalement
+                        // Fermer le menu mobile après navigation
+                        setTimeout(() => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                            hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+                        }, 100);
+                        // Ne pas empêcher l'événement
+                        return;
+                    } else {
+                        // Sur desktop, empêcher la navigation et gérer le hover
+                        e.preventDefault();
+                        e.stopPropagation();
+                        parent.classList.toggle('is-open');
+                    }
+                }
+            });
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Navbar background change on scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(15, 15, 15, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+    </script>
+    
+    <script>
+    // Gestion des sous-menus
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('.nav-menu > li');
+        
+        menuItems.forEach(item => {
+            const submenu = item.querySelector('.nav-submenu');
+            if (submenu) {
+                const mainLink = item.querySelector('a');
+                
+                // Gestion du survol pour desktop
+                item.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'block';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'none';
+                    }
+                });
+                
+                // Gestion du clic pour mobile
+                mainLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        
+                        // Fermer tous les autres sous-menus
+                        menuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                const otherSubmenu = otherItem.querySelector('.nav-submenu');
+                                if (otherSubmenu) {
+                                    otherSubmenu.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Toggle le sous-menu actuel
+                        if (submenu.style.display === 'none' || submenu.style.display === '') {
+                            submenu.style.display = 'block';
+                        } else {
+                            submenu.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Fermer les sous-menus quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-menu')) {
+                menuItems.forEach(item => {
+                    const submenu = item.querySelector('.nav-submenu');
+                    if (submenu) {
+                        submenu.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+    </script>
+    
+    <!-- Script Firebase pour les flash items -->
+    <script type="module" src="script-firebase.js"></script>
+</body>
+</html>

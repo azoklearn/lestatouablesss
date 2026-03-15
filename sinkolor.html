@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinkolor - Les Tatouables</title>
+    <meta name="description" content="Sinkolor - Artiste tatoueur spécialisé dans le manga, Disney et pop culture. Créations artistiques uniques.">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Amélioration de la lisibilité des titres et libellés du portfolio */
+        #portfolio .section-subtitle {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #f5f5f5;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.65);
+        }
+        #portfolio .portfolio-overlay p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        #portfolio .portfolio-link {
+            font-size: 0.98rem;
+            font-weight: 700;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+        }
+        
+        /* Styles pour les menus de contact */
+        .contact-menu-item {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        .contact-menu-item:hover {
+            background-color: #f5f5f5;
+            color: #2c3e50;
+        }
+        .contact-menu-item:last-child {
+            border-bottom: none;
+        }
+        .contact-menu-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        
+        
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            /* Corriger le problème de la navbar qui coupe le contenu - FORCER */
+            html, body {
+                padding-top: 120px !important;
+                margin-top: 0 !important;
+            }
+            
+            /* Forcer l'espacement sur toutes les sections */
+            .hero, .about, .portfolio, .contact, section {
+                margin-top: 0 !important;
+                padding-top: 1rem !important;
+            }
+            
+            /* S'assurer que le premier élément n'est pas coupé */
+            .hero {
+                padding-top: 3rem !important;
+                margin-top: 0 !important;
+            }
+            
+            .about {
+                padding-top: 2rem !important;
+            }
+            
+            .portfolio {
+                padding-top: 2rem !important;
+            }
+            
+            .contact {
+                padding-top: 2rem !important;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-dropdown {
+                margin-bottom: 10px;
+                margin-right: 0 !important;
+            }
+            
+            .contact-menu {
+                position: relative !important;
+                display: none;
+                margin-top: 10px;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+            
+            .contact-menu-item {
+                background: #2c3e50;
+                color: white;
+                margin: 5px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            /* Images des créations de même taille sur mobile - Forme arrondie */
+            .portfolio .portfolio-image {
+                width: 100% !important;
+                height: 200px !important;
+                overflow: hidden !important;
+                border-radius: 20px !important;
+                position: relative !important;
+            }
+            
+            .portfolio .portfolio-image img {
+                width: 100% !important;
+                height: 200px !important;
+                object-fit: cover !important;
+                border: none !important;
+                outline: none !important;
+                border-radius: 20px !important;
+                transition: transform 0.3s ease !important;
+                display: block !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+            }
+            
+            .portfolio .portfolio-image img:hover {
+                transform: scale(1.05) !important;
+            }
+            
+            .portfolio .portfolio-item {
+                margin-bottom: 2px !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                border-radius: 0 !important;
+            }
+            
+            /* Forcer l'espacement réduit sur tous les éléments portfolio */
+            .portfolio .portfolio-grid {
+                gap: 8px !important;
+                row-gap: 8px !important;
+            }
+            
+            .portfolio .portfolio-item * {
+                margin-bottom: 0 !important;
+            }
+            
+            .portfolio .portfolio-image {
+                border: none !important;
+                border-radius: 0 !important;
+                overflow: visible !important;
+            }
+            
+            /* Forcer la suppression des bordures sur tous les éléments portfolio */
+            .portfolio * {
+                border: none !important;
+                box-shadow: none !important;
+            }
+            
+            /* Supprimer complètement les conteneurs gris */
+            .portfolio .portfolio-item,
+            .portfolio .portfolio-image,
+            .portfolio .portfolio-overlay {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            /* Forcer les images à être directement visibles */
+            .portfolio .portfolio-image {
+                display: block !important;
+                background: transparent !important;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+                row-gap: 8px !important;
+                display: grid !important;
+            }
+            
+            .portfolio .portfolio-item {
+                width: 100% !important;
+                height: 200px !important;
+                overflow: hidden !important;
+                border-radius: 20px !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+                transition: all 0.3s ease !important;
+                background: #1a1a1a !important;
+                display: block !important;
+                position: relative !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .portfolio .portfolio-item * {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .portfolio .portfolio-item:hover {
+                transform: translateY(-5px) !important;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+            }
+            
+            /* Forcer la taille uniforme pour tous les éléments */
+            .portfolio .portfolio-item,
+            .portfolio .portfolio-image,
+            .portfolio .portfolio-image img {
+                min-height: 200px !important;
+                max-height: 200px !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            /* Styles pour les sous-menus sur mobile */
+            .nav-submenu {
+                position: static !important;
+                display: none !important;
+                background: #1a1a1a !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin-top: 5px !important;
+                min-width: auto !important;
+                width: 100% !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                left: auto !important;
+                top: auto !important;
+                z-index: 999 !important;
+            }
+            
+            .nav-menu li:hover .nav-submenu,
+            .nav-menu li.active .nav-submenu,
+            .nav-menu li.is-open .nav-submenu {
+                display: block !important;
+            }
+            
+            .nav-submenu .nav-link {
+                display: block !important;
+                padding: 10px 15px !important;
+                font-size: 13px !important;
+                border-bottom: 1px solid #333333 !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                background: transparent !important;
+            }
+            
+            .nav-submenu .nav-link:last-child {
+                border-bottom: none !important;
+            }
+            
+            .nav-submenu li {
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .contact-menu-item {
+                background: #1a1a1a;
+                color: white;
+                margin: 5px 0;
+                border-radius: 4px;
+                text-align: center;
+            }
+            
+            /* S'assurer que le menu hamburger permet l'affichage des sous-menus */
+            .nav-menu {
+                overflow: visible !important;
+            }
+        }
+        
+        /* Styles pour les titres de la section hero */
+        .hero h1 {
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            font-weight: 700;
+        }
+        .hero p {
+            color: #ffffff !important;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            font-weight: 500;
+        }
+        
+        /* Forcer l'espacement réduit globalement */
+        .portfolio .portfolio-item {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-image {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-overlay {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-overlay h3,
+        .portfolio .portfolio-overlay p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Styles globaux pour forcer l'espacement réduit */
+        .portfolio * {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .portfolio .portfolio-grid {
+            gap: 8px !important;
+            row-gap: 8px !important;
+        }
+        
+        .portfolio .portfolio-item {
+            margin-bottom: 8px !important;
+        }
+        
+        /* Supprimer complètement les overlays */
+        .portfolio .portfolio-overlay {
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Forcer les images à prendre tout l'espace */
+        .portfolio .portfolio-image {
+            height: auto !important;
+            min-height: 0 !important;
+        }
+        
+        .portfolio .portfolio-image img {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        /* Personnalisation de la barre de défilement */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2c3e50;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #34495e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2c3e50;
+        }
+        
+        /* Lightbox simple et efficace pour mobile */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            cursor: pointer;
+        }
+        
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 95%;
+            max-height: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10004;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        
+        /* Styles pour les boutons de navigation */
+        .lightbox-nav {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+            font-size: 16px !important;
+            font-weight: normal !important;
+            cursor: pointer !important;
+            z-index: 10003 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            opacity: 0.8 !important;
+            visibility: visible !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+            pointer-events: auto !important;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8) !important;
+            opacity: 1 !important;
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+        }
+        
+        .lightbox-nav:active {
+            background: rgba(0, 0, 0, 0.9) !important;
+            transform: translateY(-50%) scale(0.98);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* S'assurer que les boutons sont visibles par défaut */
+        #lightbox-prev, #lightbox-next {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 10001;
+        }
+        
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 14px !important;
+            }
+            
+            .lightbox-prev {
+                left: 15px !important;
+            }
+            
+            .lightbox-next {
+                right: 15px !important;
+            }
+            
+            .lightbox-counter {
+                bottom: 15px !important;
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+        }
+        
+        /* Optimisation mobile - Zoom maximum */
+        @media (max-width: 768px) {
+            .lightbox-content {
+                max-width: 100%;
+                max-height: 100%;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .lightbox img {
+                max-width: 100%;
+                max-height: 100vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+            
+            .lightbox-close {
+                top: 5px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+                font-size: 25px;
+                background: rgba(0,0,0,0.7);
+            }
+        }
+
+
+        /* Styles pour les images cliquables */
+        #portfolioGrid .portfolio-image img {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        #portfolioGrid .portfolio-image img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        /* Responsive pour mobile */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 98vw;
+                max-height: 98vh;
+                margin: 10px;
+            }
+
+            .modal-content img {
+                max-height: 70vh;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+
+            .modal-info {
+                padding: 15px;
+            }
+
+            .modal-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .modal-info p {
+                font-size: 0.9rem;
+            }
+
+            /* Effet de clic sur mobile */
+            #portfolioGrid .portfolio-image img:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        /* Sous-menu toujours visible pour l'onglet actif */
+        .nav-menu li.active .nav-submenu {
+            display: block !important;
+        }
+        
+        /* Styles pour les sous-menus */
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-menu li:hover .nav-submenu {
+            display: block;
+        }
+        
+        .nav-submenu li {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-submenu .nav-link {
+            display: block !important;
+            padding: 12px 20px;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border-bottom: 1px solid #34495e;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .nav-submenu .nav-link:hover {
+            background-color: #34495e;
+            color: #ffffff !important;
+        }
+        
+        .nav-submenu .nav-link:last-child {
+            border-bottom: none;
+        }
+        
+    </style>
+</head>
+<body style="padding-top: 150px !important;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container" style="position:relative;">
+            <div class="nav-left">
+                <a href="https://www.instagram.com/lestatouables/" target="_blank" class="nav-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="nav-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="tel:0661154068" class="nav-link" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="nav-center">
+            </div>
+            <ul id="menu" class="nav-menu">
+                <li><a href="index.html" class="nav-link">Retour à la page d'accueil</a></li>
+                <li>
+                    <a href="ldermo.html" class="nav-link">LDermo</a>
+                    <ul class="nav-submenu">
+                        <li><a href="ldermo.html" class="nav-link">Présentation</a></li>
+                        <li><a href="ldermo-tarifs.html" class="nav-link">Tarification</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="sinkolor.html" class="nav-link">Sinkolor</a>
+                    <ul class="nav-submenu">
+                        <li><a href="sinkolor.html" class="nav-link">Présentation</a></li>
+                        <li><a href="flash.html" class="nav-link">Flash disponibles</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#avis" class="nav-link">Avis</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Sinkolor Présentation -->
+    <section id="sinkolor-presentation" class="about" style="padding-top: 4rem !important; margin-top: 0 !important;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/sinkolor.jpeg" alt="S'inkolor - Artiste Tatoueur" class="about-photo">
+                </div>
+                <div class="about-text">
+                    <h2>Sinkolor</h2>
+                    <p>Passionné par l'art du tatouage et spécialisé dans les univers Manga, Disney et Pop culture, Sinkolor sera en capacité de répondre à toutes vos demandes!</p>
+                    <p>Son aptitude à utiliser de nombreuses techniques de tatouage et dans sa volonté de rendre ses œuvres toujours plus exceptionnelles, Sinkolor est en mesure de travailler avec un grand choix de couleurs et avec un large panel d'aiguilles qui vous permettra d'obtenir des tatouages aux tracés des plus fins au plus épais.</p>
+                    <p>Très à l'écoute du client, professionnel et délicat, Sinkolor saura se montrer des plus réactif pour que votre projet soit à la hauteur de vos exigences et pour que votre séance se passe dans les meilleures conditions.</p>
+                    <p>Que votre tatouage soit en noir et blanc, en couleurs, fin, épais, dans ses spécialités ou non, Sinkolor saura vous satisfaire à tous les coups!</p>
+                    <div class="contact-buttons" style="margin-top:1rem;">
+                        <div class="contact-dropdown" style="position: relative; display: inline-block; margin-right:0.5rem;">
+                            <button class="btn btn-primary contact-toggle" onclick="toggleContactMenu('sinkolor')">
+                                <i class="fas fa-envelope"></i> Contact
+                                <i class="fas fa-chevron-down" style="margin-left: 5px;"></i>
+                            </button>
+                            <div id="sinkolor-contact-menu" class="contact-menu" style="display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; min-width: 200px;">
+                                <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="contact-menu-item">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/lestatouables/" target="_blank" class="contact-menu-item">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="tel:0661154068" class="contact-menu-item">
+                                    <i class="fas fa-phone"></i> Appeler
+                                </a>
+                            </div>
+                        </div>
+                        <a href="flash.html" class="btn btn-secondary" style="display:inline-block;">Flash disponibles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Créations</h2>
+            <p class="section-subtitle">Découvrez les œuvres de Sinkolor</p>
+            
+            
+            <!-- S'inkolor -->
+            <div id="portfolio-sinkolor" class="portfolio-section">
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image5.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image5.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image6.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image6.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image7.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image7.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image8.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image8.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image9.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image9.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image10.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image10.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image12.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image12.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image13.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image13.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="sinkolor">
+                        <div class="portfolio-image">
+                            <img src="images/image11.jpeg" alt="Création Sinkolor" loading="lazy" onclick="openLightbox('images/image11.jpeg', 'Création Sinkolor')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Parlons de votre projet</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:0661154068">0661154068</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Adresse du salon</h3>
+                            <p>9Av. 1ère Armée Françaises 44-45<br>54200 Toul<br>(à 20 min à pied de la gare et 10 minutes à pied de la gare routière)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Demander un devis</h3>
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/f0e504dd5aaa9ef76ab18b48c69a944c">
+                        <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous - Sinkolor">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Décrivez votre projet de tatouage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Les Tatouables</h3>
+                    <p>Salon de Tatoueurs Professionnels</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/lestatouables/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61582881365342&mibextid=wwXIfr&rdid=1nmot7GjAphBhBTR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G3mzp4a32%2F%3Fmibextid%3DwwXIfr" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Les Tatouables . Tous droits réservés.</p>
+            </div>
+            <div class="footer-creator" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #b8b8b8; font-size: 0.9rem; margin-bottom: 0.5rem;">Site créé par <strong style="color: #ffffff;">NOANWEB</strong></p>
+                <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/noan.web/" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fab fa-instagram"></i> @noan.web
+                    </a>
+                    <span style="color: #555;">•</span>
+                    <a href="https://noanwebdesign.netlify.app" target="_blank" style="color: #b8b8b8; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.3s ease;">
+                        <i class="fas fa-globe"></i> noanwebdesign.netlify.app
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Image précédente" onclick="navigateToImage('prev')">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Image suivante" onclick="navigateToImage('next')">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">
+            <span id="current-image">1</span> / <span id="total-images">1</span>
+        </div>
+    </div>
+
+    <script>
+    // Variables globales pour la navigation dans la lightbox
+    let currentImageIndex = 0;
+    let allImages = [];
+    let isLightboxOpen = false; // Protection contre l'ouverture multiple
+    let lastClickTime = 0; // Protection contre les clics rapides
+    
+    // Fonctions de lightbox - GLOBALES
+    function openLightbox(src, alt) {
+        // Protection contre les clics rapides (délai de 300ms)
+        const now = Date.now();
+        if (now - lastClickTime < 300) {
+            return;
+        }
+        lastClickTime = now;
+        
+        // Protection contre l'ouverture multiple
+        if (isLightboxOpen) {
+            return;
+        }
+        
+        isLightboxOpen = true;
+        
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Récupérer toutes les images du portfolio
+        const portfolioImages = document.querySelectorAll('#portfolioGrid .portfolio-image img');
+        allImages = Array.from(portfolioImages).map(img => ({
+            src: img.src,
+            alt: img.alt
+        }));
+        
+        // Trouver l'index de l'image actuelle
+        currentImageIndex = allImages.findIndex(img => img.src === src);
+        if (currentImageIndex === -1) currentImageIndex = 0;
+        
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Mettre à jour le compteur
+            updateLightboxCounter();
+            
+            // Afficher/masquer les boutons de navigation
+            updateNavigationButtons();
+        }
+    }
+    
+    function updateLightboxCounter() {
+        const currentSpan = document.getElementById('current-image');
+        const totalSpan = document.getElementById('total-images');
+        
+        if (currentSpan && totalSpan) {
+            currentSpan.textContent = currentImageIndex + 1;
+            totalSpan.textContent = allImages.length;
+        }
+    }
+    
+    function updateNavigationButtons() {
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        
+        if (prevBtn && nextBtn) {
+            if (allImages.length <= 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+            }
+        }
+    }
+    
+    function navigateToImage(direction) {
+        if (allImages.length <= 1) return;
+        
+        if (direction === 'prev') {
+            currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : allImages.length - 1;
+        } else if (direction === 'next') {
+            currentImageIndex = currentImageIndex < allImages.length - 1 ? currentImageIndex + 1 : 0;
+        }
+        
+        const lightboxImg = document.getElementById('lightbox-img');
+        if (lightboxImg && allImages[currentImageIndex]) {
+            lightboxImg.src = allImages[currentImageIndex].src;
+            lightboxImg.alt = allImages[currentImageIndex].alt;
+            updateLightboxCounter();
+        }
+    }
+    
+    function closeLightbox() {
+        isLightboxOpen = false; // Réinitialiser le flag
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    </script>
+    
+    <script type="module">
+    // Système de gestion des créations avec Firebase
+    import { firebaseService } from './firebase-config.js';
+    
+    (function(){
+        const ADMIN_PASSWORD = '03KinepolisdDiva23!';
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        // const toggleBtn = document.getElementById('toggleEditPortfolio'); // Bouton supprimé
+        // const addBtn = document.getElementById('addCreation'); // Bouton supprimé
+        
+        let editMode = false;
+        let isAuthorized = false;
+        let creations = [];
+        
+        function hasSessionAuth(){
+            try { return sessionStorage.getItem('portfolioAuth') === '1'; } catch(e) { return false; }
+        }
+        
+        function setSessionAuth(on){
+            try {
+                if (on) sessionStorage.setItem('portfolioAuth','1');
+                else sessionStorage.removeItem('portfolioAuth');
+            } catch(e) {}
+        }
+        
+        function requestAuth(){
+            if (isAuthorized || hasSessionAuth()) { isAuthorized = true; return true; }
+            const pwd = prompt('Entrez le mot de passe pour éditer les créations :');
+            if (pwd === ADMIN_PASSWORD){
+                isAuthorized = true;
+                setSessionAuth(true);
+                return true;
+            }
+            alert('Mot de passe incorrect');
+            return false;
+        }
+        
+        async function loadCreations(){
+            const defaultCreations = [
+                { src: 'images/image9.jpeg', alt: 'Tatouage S\'inkolor 9', title: 'Tatouage S\'inkolor 9', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image10.jpeg', alt: 'Tatouage S\'inkolor 10', title: 'Tatouage S\'inkolor 10', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image11.jpeg', alt: 'Tatouage S\'inkolor 11', title: 'Tatouage S\'inkolor 11', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image12.jpeg', alt: 'Tatouage S\'inkolor 12', title: 'Tatouage S\'inkolor 12', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image13.jpeg', alt: 'Tatouage S\'inkolor 13', title: 'Tatouage S\'inkolor 13', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image14.jpeg', alt: 'Tatouage S\'inkolor 14', title: 'Tatouage S\'inkolor 14', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image15.jpeg', alt: 'Tatouage S\'inkolor 15', title: 'Tatouage S\'inkolor 15', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image16.jpeg', alt: 'Tatouage S\'inkolor 16', title: 'Tatouage S\'inkolor 16', category: 'tatouage', tags: 'art, créatif' },
+                { src: 'images/image17.jpeg', alt: 'Tatouage S\'inkolor 17', title: 'Tatouage S\'inkolor 17', category: 'tatouage', tags: 'art, créatif' }
+            ];
+            
+            try {
+                const firebaseCreations = await firebaseService.getSinkolorCreations();
+                if (firebaseCreations.length > 0) {
+                    return firebaseCreations;
+                } else {
+                    // Si pas de créations dans Firebase, ajouter les créations par défaut
+                    for (const creation of defaultCreations) {
+                        await firebaseService.addSinkolorCreation(creation);
+                    }
+                    return defaultCreations;
+                }
+            } catch (error) {
+                console.error('Erreur Firebase, fallback vers localStorage:', error);
+                // Fallback vers localStorage
+                try {
+                    const raw = localStorage.getItem('sinkolorCreations.v1');
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                            return parsed;
+                        }
+                    }
+                } catch(e) {}
+                return defaultCreations;
+            }
+        }
+        
+        // Les créations sont maintenant gérées individuellement par Firebase
+        // Cette fonction est gardée pour la compatibilité mais ne fait rien
+        
+        function renderCreations(){
+            portfolioGrid.innerHTML = '';
+            
+            if (creations.length === 0) {
+                const emptyState = document.createElement('div');
+                emptyState.style.cssText = 'text-align: center; padding: 3rem; color: #b8b8b8;';
+                emptyState.innerHTML = `
+                    <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem; color: #555;"></i>
+                    <h3>Aucune création pour le moment</h3>
+                    <p>Les créations de Sinkolor apparaîtront ici</p>
+                `;
+                portfolioGrid.appendChild(emptyState);
+                return;
+            }
+            
+            creations.forEach((creation, index) => {
+                const div = document.createElement('div');
+                div.className = 'portfolio-item';
+                div.setAttribute('data-category', 'all');
+                div.style.marginBottom = '8px';
+                
+                const portfolioImage = document.createElement('div');
+                portfolioImage.className = 'portfolio-image';
+                portfolioImage.style.marginBottom = '0';
+                
+                const img = document.createElement('img');
+                img.src = creation.src;
+                img.alt = creation.alt;
+                img.loading = 'lazy';
+                img.style.cursor = 'pointer';
+                
+                // Ajouter l'event listener pour la lightbox
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openLightbox(creation.src, creation.alt);
+                });
+                
+                portfolioImage.appendChild(img);
+                
+                // Ajouter l'overlay avec le lien Instagram
+                const portfolioOverlay = document.createElement('div');
+                portfolioOverlay.className = 'portfolio-overlay';
+                portfolioOverlay.innerHTML = `
+                    <h3>S'inkolor</h3>
+                    <p>Création</p>
+                    <a href="https://www.instagram.com/lestatouables/" target="_blank" class="portfolio-link">
+                        <i class="fab fa-instagram"></i> Voir sur Instagram
+                    </a>
+                `;
+                
+                div.appendChild(portfolioImage);
+                div.appendChild(portfolioOverlay);
+                
+                if (editMode) {
+                    const controls = document.createElement('div');
+                    controls.style.cssText = 'position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; z-index: 10;';
+                    
+                    const editButton = document.createElement('button');
+                    editButton.className = 'btn btn-secondary';
+                    editButton.type = 'button';
+                    editButton.textContent = 'Modifier';
+                    editButton.style.fontSize = '0.7rem';
+                    editButton.style.padding = '2px 6px';
+                    editButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        editCreation(creation.id || index);
+                    });
+                    
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'btn btn-secondary';
+                    deleteButton.type = 'button';
+                    deleteButton.textContent = 'Supprimer';
+                    deleteButton.style.fontSize = '0.7rem';
+                    deleteButton.style.padding = '2px 6px';
+                    deleteButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        deleteCreation(creation.id || index);
+                    });
+                    
+                    controls.appendChild(editButton);
+                    controls.appendChild(deleteButton);
+                    div.style.position = 'relative';
+                    div.appendChild(controls);
+                }
+                
+                portfolioGrid.appendChild(div);
+            });
+        }
+        
+        function setEditMode(on){
+            editMode = !!on;
+            // addBtn.style.display = on ? '' : 'none'; // Bouton supprimé
+            // toggleBtn.textContent = on ? 'Terminer' : 'Gérer les créations'; // Bouton supprimé
+            renderCreations();
+        }
+        
+        async function editCreation(id){
+            if (!requestAuth()) return;
+            const creation = creations.find(c => c.id === id || creations.indexOf(c) === id);
+            if (!creation) return;
+            
+            const newSrc = prompt('Nouvelle URL de l\'image :', creation.src) || creation.src;
+            const newAlt = prompt('Nouvelle description :', creation.alt) || creation.alt;
+            
+            const updatedCreation = { ...creation, src: newSrc, alt: newAlt };
+            
+            try {
+                if (creation.id) {
+                    await firebaseService.updateSinkolorCreation(creation.id, updatedCreation);
+                } else {
+                    // Fallback localStorage
+                    const index = creations.indexOf(creation);
+                    creations[index] = updatedCreation;
+                    localStorage.setItem('sinkolorCreations.v1', JSON.stringify(creations));
+                }
+                await loadAndRenderCreations();
+            } catch (error) {
+                console.error('Erreur lors de la mise à jour:', error);
+                alert('Erreur lors de la mise à jour');
+            }
+        }
+        
+        async function deleteCreation(id){
+            if (!requestAuth()) return;
+            if (!confirm('Supprimer cette création ?')) return;
+            
+            try {
+                const creation = creations.find(c => c.id === id || creations.indexOf(c) === id);
+                if (creation && creation.id) {
+                    await firebaseService.deleteSinkolorCreation(creation.id);
+                } else {
+                    // Fallback localStorage
+                    const index = creations.indexOf(creation);
+                    creations.splice(index, 1);
+                    localStorage.setItem('sinkolorCreations.v1', JSON.stringify(creations));
+                }
+                await loadAndRenderCreations();
+            } catch (error) {
+                console.error('Erreur lors de la suppression:', error);
+                alert('Erreur lors de la suppression');
+            }
+        }
+        
+        function addNewCreation(){
+            if (!requestAuth()) return;
+            openImageUploadModal();
+        }
+        
+        async function loadAndRenderCreations() {
+            creations = await loadCreations();
+            renderCreations();
+        }
+        
+        function openImageUploadModal() {
+            // Créer le modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: #2c3e50;
+                padding: 30px;
+                border-radius: 15px;
+                max-width: 400px;
+                width: 90%;
+                text-align: center;
+                color: white;
+            `;
+            
+            modalContent.innerHTML = `
+                <h3 style="margin-bottom: 20px; color: white;">Ajouter une création</h3>
+                <div id="dropZone" style="
+                    border: 2px dashed #ffffff;
+                    border-radius: 10px;
+                    padding: 40px 20px;
+                    margin: 20px 0;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    background: rgba(255,255,255,0.1);
+                ">
+                    <i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: #ffffff; margin-bottom: 15px;"></i>
+                    <p style="margin: 10px 0; font-size: 16px;">Glissez-déposez une image ici</p>
+                    <p style="margin: 5px 0; font-size: 14px; color: #bdc3c7;">ou cliquez pour choisir</p>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <div style="margin-top: 20px;">
+                    <button id="cancelBtn" style="
+                        background: #e74c3c;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        margin-right: 10px;
+                        cursor: pointer;
+                    ">Annuler</button>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            const dropZone = modal.querySelector('#dropZone');
+            const fileInput = modal.querySelector('#fileInput');
+            const cancelBtn = modal.querySelector('#cancelBtn');
+            
+            // Styles pour le drag & drop
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                dropZone.style.background = 'rgba(255,255,255,0.2)';
+                dropZone.style.borderColor = '#3498db';
+            });
+            
+            dropZone.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                dropZone.style.background = 'rgba(255,255,255,0.1)';
+                dropZone.style.borderColor = '#ffffff';
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                dropZone.style.background = 'rgba(255,255,255,0.1)';
+                dropZone.style.borderColor = '#ffffff';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileUpload(files[0]);
+                }
+            });
+            
+            dropZone.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleFileUpload(e.target.files[0]);
+                }
+            });
+            
+            cancelBtn.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            function handleFileUpload(file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Veuillez sélectionner une image valide');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    const newAlt = prompt('Description de la création :') || file.name;
+                    if (newAlt) {
+                        const newCreation = { 
+                            src: e.target.result, 
+                            alt: newAlt,
+                            title: newAlt,
+                            category: 'tatouage',
+                            tags: 'art, créatif'
+                        };
+                        
+                        try {
+                            await firebaseService.addSinkolorCreation(newCreation);
+                            await loadAndRenderCreations();
+                            document.body.removeChild(modal);
+                        } catch (error) {
+                            console.error('Erreur lors de l\'ajout:', error);
+                            // Fallback localStorage
+                            creations.push(newCreation);
+                            localStorage.setItem('sinkolorCreations.v1', JSON.stringify(creations));
+                            renderCreations();
+                            document.body.removeChild(modal);
+                        }
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        // toggleBtn.addEventListener('click', () => {
+        //     if (!editMode) {
+        //         if (!requestAuth()) return;
+        //     }
+        //     setEditMode(!editMode);
+        // }); // Bouton supprimé
+        
+        // addBtn.addEventListener('click', addNewCreation); // Bouton supprimé
+        
+        // Initialiser les créations au chargement de la page
+        loadAndRenderCreations();
+        
+        // Test d'initialisation
+        console.log('=== INITIALISATION ===');
+        console.log('openLightbox disponible:', typeof window.openLightbox);
+        console.log('Portfolio grid trouvé:', document.getElementById('portfolioGrid'));
+        
+        // Écouter les changements en temps réel
+        firebaseService.onSinkolorCreationsChange((snapshot) => {
+            const newCreations = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            creations = newCreations;
+            renderCreations();
+        });
+    })();
+    
+    // Navigation au clavier uniquement
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.style.display === 'block') {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                navigateToImage('prev');
+            } else if (e.key === 'ArrowRight') {
+                navigateToImage('next');
+            }
+        }
+    });
+    
+    // Script de navigation et fonctionnalités de base (remplace script.js)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navigation mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        // Scroll navbar
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+                    navbar.style.backdropFilter = 'blur(10px)';
+                } else {
+                    navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        }
+        
+        // Formulaire de contact (seulement s'il existe)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Logique du formulaire ici si nécessaire
+                console.log('Formulaire soumis');
+            });
+        }
+    });
+    </script>
+    
+    </script>
+    
+    <script>
+    // Fonction pour gérer les menus de contact
+    function toggleContactMenu(artist) {
+        const menu = document.getElementById(artist + '-contact-menu');
+        const allMenus = document.querySelectorAll('.contact-menu');
+        
+        // Fermer tous les autres menus
+        allMenus.forEach(m => {
+            if (m.id !== artist + '-contact-menu') {
+                m.style.display = 'none';
+            }
+        });
+        
+        // Toggle le menu actuel
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    }
+    
+    // Fermer les menus quand on clique ailleurs
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.contact-dropdown')) {
+            const allMenus = document.querySelectorAll('.contact-menu');
+            allMenus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    });
+    </script>
+    
+    <script>
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-controls', 'menu');
+
+        // Gestionnaire pour clic et toucher (mobile)
+        function handleHamburgerClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            hamburger.setAttribute('aria-label', isActive ? 'Fermer le menu' : 'Ouvrir le menu');
+        }
+        
+        // Ajouter les événements pour clic et toucher
+        hamburger.addEventListener('click', handleHamburgerClick);
+        hamburger.addEventListener('touchstart', handleHamburgerClick);
+
+        // Close menu only when clicking on a leaf link (sans sous-menu) ou un lien de sous-menu
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const li = link.parentElement;
+                const hasDirectSubmenu = li && li.querySelector(':scope > .nav-submenu');
+                if (hasDirectSubmenu) {
+                    // Parent avec sous-menu: ne pas fermer ici (le toggle gère l'ouverture)
+                    return;
+                }
+                // Lien de sous-menu ou lien simple: fermer le panneau
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+            });
+        });
+
+        // Toggle sous-menus dans le panneau hamburger (tous écrans)
+        document.querySelectorAll('.nav-menu > li > a').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const parent = anchor.parentElement;
+                const submenu = parent.querySelector('.nav-submenu');
+                if (submenu) {
+                    // Sur mobile, ne pas empêcher la navigation du tout
+                    if (window.innerWidth <= 768) {
+                        // Laisser la navigation se faire normalement
+                        // Fermer le menu mobile après navigation
+                        setTimeout(() => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                            hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+                        }, 100);
+                        // Ne pas empêcher l'événement
+                        return;
+                    } else {
+                        // Sur desktop, empêcher la navigation et gérer le hover
+                        e.preventDefault();
+                        e.stopPropagation();
+                        parent.classList.toggle('is-open');
+                    }
+                }
+            });
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Navbar background change on scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(15, 15, 15, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // Fonctions pour la modal de zoom d'image
+    function openImageModal(src, title, description) {
+        const modal = document.getElementById('imageZoomModal');
+        const img = document.getElementById('zoomedImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        
+        img.src = src;
+        img.alt = title;
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeImageModal() {
+        const modal = document.getElementById('imageZoomModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Ajouter les gestionnaires de clic sur les images du portfolio
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioImages = document.querySelectorAll('#portfolioGrid .portfolio-image img');
+        
+        // Les images sont maintenant gérées par la lightbox uniquement
+    });
+    </script>
+    
+    <script>
+    // Gestion des sous-menus
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('.nav-menu > li');
+        
+        menuItems.forEach(item => {
+            const submenu = item.querySelector('.nav-submenu');
+            if (submenu) {
+                const mainLink = item.querySelector('a');
+                
+                // Gestion du survol pour desktop
+                item.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'block';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 768) {
+                        submenu.style.display = 'none';
+                    }
+                });
+                
+                // Gestion du clic pour mobile
+                mainLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        
+                        // Fermer tous les autres sous-menus
+                        menuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                const otherSubmenu = otherItem.querySelector('.nav-submenu');
+                                if (otherSubmenu) {
+                                    otherSubmenu.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Toggle le sous-menu actuel
+                        if (submenu.style.display === 'none' || submenu.style.display === '') {
+                            submenu.style.display = 'block';
+                        } else {
+                            submenu.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Fermer les sous-menus quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-menu')) {
+                menuItems.forEach(item => {
+                    const submenu = item.querySelector('.nav-submenu');
+                    if (submenu) {
+                        submenu.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+    </script>
+    
+    <script type="module" src="script-firebase.js"></script>
+</body>
+</html>
+

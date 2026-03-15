@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Final - Les Tatouables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .test-section {
+            background: #2d2d2d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .info { color: #2196F3; }
+        .warning { color: #ff9800; }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #45a049; }
+        .test-link {
+            display: inline-block;
+            background: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .test-link:hover { background: #1976D2; }
+        #log {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .status-item {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Test Final - Les Tatouables avec Firebase</h1>
+    
+    <div class="test-section">
+        <h2>📊 État des composants</h2>
+        <div class="status-grid">
+            <div class="status-item">
+                <h3>Firebase</h3>
+                <p id="firebase-status" class="info">Test en cours...</p>
+            </div>
+            <div class="status-item">
+                <h3>Flash Items</h3>
+                <p id="flash-status" class="info">Test en cours...</p>
+            </div>
+            <div class="status-item">
+                <h3>LDermo Creations</h3>
+                <p id="ldermo-status" class="info">Test en cours...</p>
+            </div>
+            <div class="status-item">
+                <h3>Sinkolor Creations</h3>
+                <p id="sinkolor-status" class="info">Test en cours...</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔗 Liens de test</h2>
+        <a href="index.html" class="test-link">🏠 Page d'accueil</a>
+        <a href="ldermo.html" class="test-link">👩‍⚕️ LDermo</a>
+        <a href="sinkolor.html" class="test-link">🎨 Sinkolor</a>
+        <a href="flash.html" class="test-link">⚡ Flash</a>
+        <a href="test-firebase.html" class="test-link">🔥 Test Firebase</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>🧪 Tests de fonctionnalités</h2>
+        <button onclick="testAllComponents()">Tester tous les composants</button>
+        <button onclick="testAddData()">Ajouter des données de test</button>
+        <button onclick="testReadData()">Lire les données</button>
+        <button onclick="clearLog()">Effacer le log</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>📝 Log des opérations</h2>
+        <div id="log">En attente des tests...\n</div>
+    </div>
+
+    <script type="module">
+        import { firebaseService } from './firebase-config.js';
+        
+        let logElement = document.getElementById('log');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info';
+            logElement.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        function clearLog() {
+            logElement.innerHTML = '';
+        }
+        
+        function updateStatus(component, status, type = 'info') {
+            const element = document.getElementById(component + '-status');
+            element.textContent = status;
+            element.className = type;
+        }
+        
+        // Test de tous les composants
+        window.testAllComponents = async function() {
+            log('=== DÉBUT DES TESTS COMPLETS ===');
+            
+            try {
+                // Test Firebase
+                log('Test de connexion Firebase...');
+                updateStatus('firebase', 'Test en cours...', 'info');
+                await firebaseService.getFlashItems();
+                updateStatus('firebase', '✅ Connecté', 'success');
+                log('Firebase connecté avec succès', 'success');
+                
+                // Test Flash Items
+                log('Test des Flash Items...');
+                updateStatus('flash', 'Test en cours...', 'info');
+                const flashItems = await firebaseService.getFlashItems();
+                updateStatus('flash', `✅ ${flashItems.length} items`, 'success');
+                log(`${flashItems.length} flash items trouvés`, 'success');
+                
+                // Test LDermo Creations
+                log('Test des créations LDermo...');
+                updateStatus('ldermo', 'Test en cours...', 'info');
+                const ldermoCreations = await firebaseService.getLDermoCreations();
+                updateStatus('ldermo', `✅ ${ldermoCreations.length} créations`, 'success');
+                log(`${ldermoCreations.length} créations LDermo trouvées`, 'success');
+                
+                // Test Sinkolor Creations
+                log('Test des créations Sinkolor...');
+                updateStatus('sinkolor', 'Test en cours...', 'info');
+                const sinkolorCreations = await firebaseService.getSinkolorCreations();
+                updateStatus('sinkolor', `✅ ${sinkolorCreations.length} créations`, 'success');
+                log(`${sinkolorCreations.length} créations Sinkolor trouvées`, 'success');
+                
+                log('=== TOUS LES TESTS RÉUSSIS ===', 'success');
+                
+            } catch (error) {
+                log(`Erreur lors des tests: ${error.message}`, 'error');
+                updateStatus('firebase', '❌ Erreur', 'error');
+            }
+        };
+        
+        // Test d'ajout de données
+        window.testAddData = async function() {
+            log('Ajout de données de test...');
+            
+            try {
+                // Ajouter un flash item
+                const flashItem = {
+                    title: 'Test Flash ' + Date.now(),
+                    tags: ['test', 'demo'],
+                    imageData: 'https://placehold.co/600x600?text=Test+Flash'
+                };
+                await firebaseService.addFlashItem(flashItem);
+                log('Flash item ajouté', 'success');
+                
+                // Ajouter une création LDermo
+                const ldermoCreation = {
+                    src: 'https://placehold.co/400x400?text=Test+LDermo',
+                    alt: 'Test création LDermo ' + Date.now(),
+                    type: 'test'
+                };
+                await firebaseService.addLDermoCreation(ldermoCreation);
+                log('Création LDermo ajoutée', 'success');
+                
+                // Ajouter une création Sinkolor
+                const sinkolorCreation = {
+                    src: 'https://placehold.co/400x400?text=Test+Sinkolor',
+                    alt: 'Test création Sinkolor ' + Date.now(),
+                    type: 'manga'
+                };
+                await firebaseService.addSinkolorCreation(sinkolorCreation);
+                log('Création Sinkolor ajoutée', 'success');
+                
+                log('Toutes les données de test ont été ajoutées', 'success');
+                
+            } catch (error) {
+                log(`Erreur lors de l'ajout: ${error.message}`, 'error');
+            }
+        };
+        
+        // Test de lecture des données
+        window.testReadData = async function() {
+            log('Lecture de toutes les données...');
+            
+            try {
+                const [flashItems, ldermoCreations, sinkolorCreations] = await Promise.all([
+                    firebaseService.getFlashItems(),
+                    firebaseService.getLDermoCreations(),
+                    firebaseService.getSinkolorCreations()
+                ]);
+                
+                log(`Flash Items: ${flashItems.length}`, 'info');
+                flashItems.forEach((item, index) => {
+                    log(`  ${index + 1}. ${item.title}`, 'info');
+                });
+                
+                log(`Créations LDermo: ${ldermoCreations.length}`, 'info');
+                ldermoCreations.forEach((creation, index) => {
+                    log(`  ${index + 1}. ${creation.alt}`, 'info');
+                });
+                
+                log(`Créations Sinkolor: ${sinkolorCreations.length}`, 'info');
+                sinkolorCreations.forEach((creation, index) => {
+                    log(`  ${index + 1}. ${creation.alt}`, 'info');
+                });
+                
+                log('Lecture terminée avec succès', 'success');
+                
+            } catch (error) {
+                log(`Erreur lors de la lecture: ${error.message}`, 'error');
+            }
+        };
+        
+        // Fonction globale pour effacer le log
+        window.clearLog = clearLog;
+        
+        // Initialiser les tests au chargement
+        log('Page de test chargée. Cliquez sur "Tester tous les composants" pour commencer.');
+    </script>
+</body>
+</html>
+
+
